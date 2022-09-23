@@ -76,6 +76,3 @@ runs:
     with:
       path: /tmp/.buildx-cache
       key: ${{ steps.generate-image-name.outputs.image }}_${{ inputs.osg_series}}_${{ inputs.repo }}_buildx_${{ github.sha }}_${{ github.run_id }}
-outputs:
-  tags: ${{ steps.mkdatetag }}
-  description: generated timestamp tag
