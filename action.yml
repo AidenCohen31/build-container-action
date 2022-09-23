@@ -25,7 +25,10 @@ inputs:
     required: false
     default: ''
     
-
+outputs:
+      tags: 
+        description: generated timestamp
+        value: ${{ steps.mkdatetag.outputs.dtag }}
 runs:
   using: "composite"
   steps:
