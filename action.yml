@@ -50,7 +50,7 @@ runs:
       fi
       echo "::set-output name=image::${IMAGE_NAME,,}"
   - id: mkdatetag
-      run: echo "::set-output name=dtag::$(date +%Y%m%d-%H%M)"
+    run: echo "::set-output name=dtag::$(date +%Y%m%d-%H%M)"
  
   - name: Set up Docker Buildx
     uses: docker/setup-buildx-action@v1
