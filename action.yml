@@ -50,6 +50,7 @@ runs:
       fi
       echo "::set-output name=image::${IMAGE_NAME,,}"
   - id: mkdatetag
+    shell: bash
     run: echo "::set-output name=dtag::$(date +%Y%m%d-%H%M)"
  
   - name: Set up Docker Buildx
