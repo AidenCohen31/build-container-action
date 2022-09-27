@@ -28,7 +28,7 @@ inputs:
 outputs:
       tags: 
         description: generated timestamp
-        value: ${{ steps.mkdatetag.outputs.dtag }}
+        value: ${{ steps.generate-image-name.outputs.image }}:${{ inputs.osg_series }}-${{ inputs.repo }}-${{ steps.mkdatetag.outputs.dtag }}
 runs:
   using: "composite"
   steps:
@@ -67,7 +67,7 @@ runs:
       build-args: |
         BASE_YUM_REPO=${{ inputs.repo }}
         BASE_OSG_SERIES=${{ inputs.osg_series }}
-        TIMESTAMP_TAG=${{ steps.mkdatetag }}
+        TIMESTAMP_TAG=${{ outputs.tags }}
       tags: "latest"
       cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
 
