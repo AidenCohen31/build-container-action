@@ -56,6 +56,7 @@ runs:
     shell: bash
     run: echo "::set-output name=dtag::$(date +%Y%m%d-%H%M)"
   - id: create_timestamp_tag
+    shell: bash
     run: echo "::set-output name=tags::${IMAGE}:${OSG}-${REPO}-${DATE}
     with:
       IMAGE=${{ steps.generate-image-name.outputs.image }}
